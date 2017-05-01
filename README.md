@@ -34,7 +34,7 @@ npm install
 This will create the directory *node-modules* with all dependencies listed in *package.json*.
 
 ##Running server
-Use ```ng server``` for a dev server, and you can find our app at ```http://localhost:4200/```
+Use ```ng serve``` for a dev server, and you can find our app at ```http://localhost:4200/```
 
 ## Further help
 
