@@ -1,6 +1,6 @@
 export class Place {
-	id:number;
-	name:string;
+	idPlace:number;
+	namePlace:string;
 	location:string;
 	province:string;
 	postalCode:number;

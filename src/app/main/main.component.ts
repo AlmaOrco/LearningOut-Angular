@@ -14,7 +14,7 @@ export class MainComponent {
     private places: Place[];
 
     constructor(placeService: PlaceService){
-    	this.places = placeService.getPlaces();
+    	placeService.getPlaces().then(places => this.places = places);
     }
   
 }
