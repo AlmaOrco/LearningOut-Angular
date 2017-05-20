@@ -15,7 +15,11 @@ import { MainComponent } from './main/main.component';
     AppComponent,
     HeaderComponent,
     MenuComponent,
+<<<<<<< HEAD
     MainComponent
+=======
+    MainComponent    
+>>>>>>> 47fef25b50f6e31d390041057b07a8a3726ec1bd
   ],
   imports: [
     BrowserModule,
