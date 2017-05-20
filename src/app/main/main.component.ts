@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Http } from '@angular/http';
+
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 import { Place } from '../classes/place';
 import { PlaceService } from '../services/place.service';
@@ -11,10 +15,10 @@ import { PlaceService } from '../services/place.service';
 export class MainComponent {
 
     private title = "Encuentra tu lugar";
-    private places: Place[];
+    private places: Observable<Place[]>;
 
     constructor(placeService: PlaceService){
-    	placeService.getPlaces().then(places => this.places = places);
+    	this.places = placeService.getPlaces();
     }
   
 }

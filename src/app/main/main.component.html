@@ -1,11 +1,11 @@
 <h2>Lugares</h2>
 <ul>
-	<li *ngFor="let place of places">
+	<li *ngFor="let place of places | async">
 		<div class="place">
-			<h3>{{place.namePlace}}</h3>
-			<p>{{place.location}}</p>
-			<p>{{place.province}}</p>
-			<p>{{place.postalCode}}</p>
+			<h3>{{ place.namePlace }}</h3>
+			<p>{{ place.location }}</p>
+			<p>{{ place.province }}</p>
+			<p>{{ place.postalCode }}</p>
 		</div>
 	</li>
 </ul>
