@@ -18,8 +18,7 @@ import { MainComponent } from './main/main.component';
     AppComponent,
     HeaderComponent,
     MenuComponent,
-    MainComponent,
-    HttpModule
+    MainComponent    
   ],
   imports: [
     BrowserModule,
