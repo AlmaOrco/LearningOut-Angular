@@ -2,31 +2,40 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 
 import { PlaceService } from './services/place.service';
+import { PlaceSearchService } from './place-search/place-search.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { MainComponent } from './main/main.component';
+import { PlaceSearchComponent } from './place-search/place-search.component';
+import { LoBlogAComponent } from './lo-blog/lo-blog-a.component';
+import { PlaceDetailComponent } from './place-detail/place-detail.component';
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MenuComponent,
-<<<<<<< HEAD
-    MainComponent
-=======
-    MainComponent    
->>>>>>> 47fef25b50f6e31d390041057b07a8a3726ec1bd
+    MainComponent,
+    PlaceSearchComponent,
+    PlaceDetailComponent,
+    LoBlogAComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
-  providers: [ PlaceService ],
+  providers: [ 
+    PlaceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,8 +1,11 @@
 # LearningOut-Angular
 This is a front side of [LearningOut API REST](https://github.com/AlmaOrco/LearningOut).
-Actually, I'm trying to connect both sides by http request sending json responses.
+This gets data from the database through the api server side.
 
-For now, this app shows data stored in the service class. I'm working on this.
+## Features
+Get place list and show them.
+Go to detail view when you click in one item.
+It can also search by term in while you're writing and show detail view when you click.
 
 ## Installation
 To run this app, you'll need node 6.3.x or higher, and npm 3.3.x or higher. Check this with 

@@ -7,12 +7,12 @@ import 'rxjs/add/operator/map';
 import { Place } from '../classes/place';
 
 @Injectable()
-export class PlaceService {
-	
+export class PlaceDetailService {
+
 	constructor(private http: Http) {}
-	
-	getPlaces(): Observable<Place[]> {
-		return this.http.get('http://localhost:8080/learningout/api/places.json')
-						.map((response: Response) => <Place[]> response.json());
+
+	search(id: number): Observable<Place> {
+		return this.http.get(`http://localhost:8080/learningout/api/places/${id}.json`)
+					.map((response: Response) => <Place> response.json());
 	}
 }

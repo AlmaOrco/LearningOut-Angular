@@ -1,0 +1,7 @@
+<div class="singlePlace" *ngIf="place">
+	<h2>{{ place.namePlace }}</h2>
+	<p>{{ place.location }}</p>
+	<p>{{ place.province }}</p>
+	<p>{{ place.postalCode }}</p>
+</div>
+<button (click)="goBack()">Atrás</button>

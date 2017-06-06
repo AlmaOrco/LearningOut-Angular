@@ -1,0 +1,11 @@
+<div id="search-component">Encuentra tu lugar
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  <div>
+    <div *ngFor="let place of places | async"
+         class="search-result" >
+	<a routerLink="/detail/{{ place.idPlace }}">
+      			{{place.namePlace}}
+      	</a>
+    </div>
+  </div>
+</div>

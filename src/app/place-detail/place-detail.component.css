@@ -1,0 +1,12 @@
+.singlePlace {
+  border: solid 2px #442504;
+  padding: 15px;
+  background: #298A08;
+  color: white;
+  margin: 5px;
+  width: 80%;
+}
+
+.singlePlace h3 {
+  border-bottom: solid 1px #442504;
+}
