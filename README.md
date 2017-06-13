@@ -2,6 +2,9 @@
 This is a front side of [LearningOut API REST](https://github.com/AlmaOrco/LearningOut).
 This gets data from the database through the api server side.
 
+## Notes of branch
+Branch in development. It may has bugs and incomplete functionalities.
+
 ## Features
 Get place list and show them.
 Go to detail view when you click in one item.
