@@ -12,21 +12,21 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/switchMap';
 
-import { PlaceSearchService } from './place-search.service';
+import { PlaceService } from '../services/place.service';
 import { Place } from '../classes/place';
 
 @Component({
 	selector: 'place-search',
 	templateUrl: './place-search.component.html',
 	styleUrls: [ './place-search.component.css'],
-	providers: [PlaceSearchService]
+	providers: [PlaceService]
 })
 export class PlaceSearchComponent implements OnInit {
 	places: Observable<Place[]>;
 	private searchTerms = new Subject<string>();
 
 	constructor(
-		private placeSearchService: PlaceSearchService,
+		private placeService: PlaceService,
 		private router: Router) {}
 
 	search(term: string): void {
@@ -37,7 +37,7 @@ export class PlaceSearchComponent implements OnInit {
 		this.places = this.searchTerms
 			.debounceTime(300)
 			.distinctUntilChanged()
-			.switchMap(term => term ? this.placeSearchService.search(term): Observable.of<Place[]>([]))
+			.switchMap(term => term ? this.placeService.search(term): Observable.of<Place[]>([]))
 			.catch(error => {
 				this.handleError(error);
 			    console.log(error);
@@ -47,8 +47,7 @@ export class PlaceSearchComponent implements OnInit {
 	}
 
 	gotoDetail(place: Place): void {
-		let link = ['/detail', place.id];
-		this.router.navigate(link);
+		this.router.navigate(['/detail', place.idPlace]);
 	}
 
 	private handleError(error: Response | any) {

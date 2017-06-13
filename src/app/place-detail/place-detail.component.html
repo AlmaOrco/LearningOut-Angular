@@ -3,5 +3,6 @@
 	<p>{{ place.location }}</p>
 	<p>{{ place.province }}</p>
 	<p>{{ place.postalCode }}</p>
+	<button (click)="goEdit(place.idPlace)">Edit</button>
 </div>
 <button (click)="goBack()">Atrás</button>

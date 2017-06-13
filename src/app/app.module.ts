@@ -14,6 +14,7 @@ import { MainComponent } from './main/main.component';
 import { PlaceSearchComponent } from './place-search/place-search.component';
 import { LoBlogAComponent } from './lo-blog/lo-blog-a.component';
 import { PlaceDetailComponent } from './place-detail/place-detail.component';
+import { PlaceFormComponent } from './place-edit/place-form.component';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -25,7 +26,8 @@ import { AppRoutingModule } from './app-routing.module';
     MainComponent,
     PlaceSearchComponent,
     PlaceDetailComponent,
-    LoBlogAComponent
+    LoBlogAComponent,
+    PlaceFormComponent
   ],
   imports: [
     BrowserModule,

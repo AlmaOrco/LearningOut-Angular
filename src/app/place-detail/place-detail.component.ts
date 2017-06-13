@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Location } from '@angular/common';
 
@@ -13,33 +13,39 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/switchMap';
 
-import { PlaceDetailService } from './place-detail.service';
+import { PlaceService } from '../services/place.service';
 import { Place } from '../classes/place';
 
 @Component({
 	selector: 'place-detail',
 	templateUrl: './place-detail.component.html',
 	styleUrls: [ './place-detail.component.css'],
-	providers: [PlaceDetailService]
+	providers: [PlaceService]
 })
 export class PlaceDetailComponent implements OnInit {
-//	place: Observable<Place>;
 	
-	@Input() place: Place;
+	place: Place;
+	selectedPlace: Place;
 
 	constructor(
-		private placeDetailService: PlaceDetailService,
+		private placeService: PlaceService,
 		private route: ActivatedRoute,
-		private location: Location) {}
+		private location: Location,
+		private router: Router) {}
 
 	ngOnInit(): void {
 		  this.route.params
-    		.switchMap((params: Params) => this.placeDetailService.search(+params['id']))
+    		.switchMap((params: Params) => this.placeService.getPlace(+params['id']))
     		.subscribe(place => this.place = place);
 	}
 
 	goBack(): void {
 		this.location.back();
+	}
+
+	goEdit(idPlace: String): void {
+		this.router.navigate(['edit/' + idPlace]);
+	
 	}
 
 	private handleError(error: Response | any) {
