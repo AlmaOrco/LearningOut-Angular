@@ -24,8 +24,10 @@ import { Place } from '../classes/place';
 })
 export class PlaceDetailComponent implements OnInit {
 	
-	place: Place;
-	selectedPlace: Place;
+	@Input() place: Place;
+	response_status: number;
+	delete_success: boolean = false;
+	errorMessage: string;
 
 	constructor(
 		private placeService: PlaceService,
@@ -45,7 +47,18 @@ export class PlaceDetailComponent implements OnInit {
 
 	goEdit(idPlace: String): void {
 		this.router.navigate(['edit/' + idPlace]);
-	
+	}
+
+	toDelete(place: Place): void {
+	    this.placeService.deletePlace(place.idPlace.toString()).subscribe(
+	      response => {
+	        this.response_status = response;
+	        if (this.response_status === 204) {
+	          this.delete_success = true;
+	          this.place = <Place>{};
+	        }
+	      },
+		error => this.errorMessage = <any> error);
 	}
 
 	private handleError(error: Response | any) {

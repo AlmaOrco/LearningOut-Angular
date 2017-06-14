@@ -29,7 +29,10 @@ export class PlaceFormComponent implements OnInit {
 	model = new Place();
 
 	onSubmit() {
-
+		this.placeService.addPlace(this.model);
 	}
 
+	goBack(): void {
+		this.location.back();
+	}
 }

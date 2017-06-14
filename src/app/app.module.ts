@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { PlaceService } from './services/place.service';
-import { PlaceSearchService } from './place-search/place-search.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
