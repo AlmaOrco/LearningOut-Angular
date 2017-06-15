@@ -1,3 +1,8 @@
+.placesList{
+	width: 100%;
+	display: inline-block;
+}
+
 ul {
 	list-style-type: none;
 }
@@ -16,4 +21,8 @@ li {
 
 .place h3 {
 	border-bottom: solid 1px #442504;
+}
+
+.addButton {
+	padding: 20px;
 }

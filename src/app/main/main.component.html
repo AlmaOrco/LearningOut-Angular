@@ -1,14 +1,18 @@
-<h2>Lugares</h2>
-<ul>
-	<li *ngFor="let place of places | async">
-		<a routerLink="/detail/{{ place.idPlace }}">
-			<div class="place">
-				<h3>{{ place.namePlace }}</h3>
-				<p>{{ place.location }}</p>
-				<p>{{ place.province }}</p>
-				<p>{{ place.postalCode }}</p>
-			</div>
-		</a>
-	</li>
-</ul>
-<!-- <place-detail [place]='selectedPlace'></place-detail> -->
+<div class="placesList">
+	<h2>Lugares</h2>
+	<ul>
+		<li *ngFor="let place of places | async">
+			<a routerLink="/detail/{{ place.idPlace }}">
+				<div class="place">
+					<h3>{{ place.namePlace }}</h3>
+					<p>{{ place.location }}</p>
+					<p>{{ place.province }}</p>
+					<p>{{ place.postalCode }}</p>
+				</div>
+			</a>
+		</li>
+	</ul>
+</div>
+<div class="addButton">
+	<button (click)="gotoAdd()">Añade tu  Lugar</button>
+</div>
