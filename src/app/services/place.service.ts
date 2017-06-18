@@ -37,8 +37,12 @@ export class PlaceService {
 	}
 
 	addPlace(place: Place): Observable<Place> {
-		return this.http.post(`http://localhost:8080/learningout/api/places/add/${place.idPlace}.json`,JSON.stringify(place))
-					.map((response: Response) => <Place> response.json());
+		const headers = new Headers();
+    	headers.append('Content-Type', 'application/json');
+    	headers.append('Accept', 'application/json');
+		return this.http.post(`http://localhost:8080/learningout/api/places/add/place.json`,JSON.stringify(place), {headers})
+					.map((response: Response) => <Place> response.json())
+    				.catch(this.handleError);
 	}
 
 	deletePlace(id: String): Observable<number> {

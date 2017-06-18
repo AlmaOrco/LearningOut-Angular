@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Place } from '../classes/place';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { PlaceService } from '../services/place.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class PlaceAddComponent implements OnInit {
   added_success: boolean = false;
   errorMessage: string;
 
-  constructor( private placeService: PlaceService, private router: Router, private route: ActivatedRoute) {
+  constructor( private placeService: PlaceService, private router: Router) {
     this.place = <Place>{};
   }
 
@@ -32,7 +32,6 @@ export class PlaceAddComponent implements OnInit {
   }
 
   gotoPlacesList() {
-    // TODO Revise
     this.router.navigate(['/places']);
   }
 }
