@@ -2,14 +2,12 @@
 This is a front side of [LearningOut API REST](https://github.com/AlmaOrco/LearningOut).
 This gets data from the database through the api server side.
 
-## Notes of branch
-Branch in development. It may has bugs and incomplete functionalities.
-
 ## Features
 Get place list and show them.
 Go to detail view when you click in one item.
 It can also search by term in while you're writing and show detail view when you click.
 Delete place.
+Add new places and modify and existing place.
 
 ## Installation
 To run this app, you'll need node 6.3.x or higher, and npm 3.3.x or higher. Check this with 
