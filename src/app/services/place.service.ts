@@ -53,6 +53,15 @@ export class PlaceService {
 			.catch(this.handleError);
 	}
 
+	updatePlace(place: Place): Observable<Place> {
+		const body = JSON.stringify(place);
+		const headers = new Headers({'Content-Type': ' application/json;charset=UTF-8'});
+		const options = new RequestOptions({headers: headers});
+		return this.http.put(`http://localhost:8080/learningout/api/places/update/${place.idPlace}.json`, body, options)
+			.map((response: Response) => response)
+			.catch(this.handleError);
+	}
+
 	private handleError(error: Response | any) {
 	    console.log('handleError log: ');
 	    let errMsg: string;
