@@ -1,10 +1,10 @@
-import { LearningoutFrontPage } from './app.po';
+import { LoTry6Page } from './app.po';
 
-describe('learningout-front App', () => {
-  let page: LearningoutFrontPage;
+describe('lo-try6 App', () => {
+  let page: LoTry6Page;
 
   beforeEach(() => {
-    page = new LearningoutFrontPage();
+    page = new LoTry6Page();
   });
 
   it('should display message saying app works', () => {

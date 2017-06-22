@@ -14,8 +14,8 @@ const routes: Routes = [
   { path: 'edit/:id', component: PlaceFormComponent },
   { path: 'que_es_lo', component: LoBlogAComponent },
   { path: 'add', component: PlaceAddComponent},
-  { path: 'list', component: MainComponent },
-  { path: 'places', redirectTo:'index.html'}
+  { path: 'list', component: MainComponent},
+  //{ path: 'places', redirectTo: 'index.html' }
 ];
 
 @NgModule({

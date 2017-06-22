@@ -1,64 +1,27 @@
-# LearningOut-Angular
-This is a front side of [LearningOut API REST](https://github.com/AlmaOrco/LearningOut).
-This gets data from the database through the api server side.
+# LoTry6
 
-## Features
-Get place list and show them.
-Go to detail view when you click in one item.
-It can also search by term in while you're writing and show detail view when you click.
-Delete place.
-Add new places and modify and existing place.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
-## Installation
-To run this app, you'll need node 6.3.x or higher, and npm 3.3.x or higher. Check this with 
-```
-node -v
-```
-and
-```
-npm -v
-```
-If you don't have installed, you can download from [Nodejs.org](https://nodejs.org/es/).
+## Development server
 
-Then, you can install angular-cli
-```
-npm uninstall -g angular-cli @angular/cli
-npm cache clean
-npm install -g @angular/cli@latest
-```
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Clone this project:
-```
-git clone https://github.com/AlmaOrco/LearningOut-Angular.git
-cd LearningOut-Angular
-```
-And install local project package:
-```
-npm install --save-dev @angular/cli@latest
-npm install
-```
-This will create the directory *node-modules* with all dependencies listed in *package.json*.
+## Code scaffolding
 
-## Running server
-Use ```ng serve``` or ```npm start``` for a dev server, and you can find our app at ```http://localhost:4200/```
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
 
-## Deployment
-To deploy the project in production mode, you follow this step.
-Clone this project:
-```
-git clone https://github.com/AlmaOrco/LearningOut-Angular.git
-cd LearningOut-Angular
-```
-You'll need to know the hostname (or **"host:port"**) of your api and set the **SERVER_HOST** constant, in */src/environments/environment.prod.ts*
+## Build
 
-Compile the project with *ng build*. Add *--prod* flag to avoid dead code and get a lighter version of files.
-```
-ng build --prod
-```
-This creates all necesary files in the directory *dist*.
-Copy these files to your server and open your index.html code. Notice that routes are pointing to the root of your server. Remember to update the routes of src and href attributes if you put them in inner directory.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-Now, you can go to your browser and tip url of your app.
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Before running the tests make sure you are serving the app via `ng serve`.
 
 ## Further help
 
