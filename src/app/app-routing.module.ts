@@ -8,13 +8,14 @@ import { LoBlogAComponent } from './lo-blog/lo-blog-a.component';
 import { PlaceAddComponent } from './place-add/place-add.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/index', pathMatch: 'full' },
-  { path: 'index',  component: MainComponent },
+  { path: '', redirectTo: '/index.html', pathMatch: 'full' },
+  { path: 'index.html',  component: MainComponent },
   { path: 'detail/:id', component: PlaceDetailComponent },
   { path: 'edit/:id', component: PlaceFormComponent },
   { path: 'que_es_lo', component: LoBlogAComponent },
   { path: 'add', component: PlaceAddComponent},
-  { path: 'places', redirectTo: '/index' }
+  { path: 'list', component: MainComponent },
+  { path: 'places', redirectTo:'index.html'}
 ];
 
 @NgModule({

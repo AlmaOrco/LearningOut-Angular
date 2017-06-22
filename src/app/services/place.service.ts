@@ -1,15 +1,20 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-
 import { Observable } from 'rxjs/Observable';
+import { Location } from '@angular/common';
 import 'rxjs/add/operator/map';
+
+import { environment } from '../../environments/environment.prod';
 
 import { Place } from '../classes/place';
 
 @Injectable()
 export class PlaceService {
-	
-	constructor(private http: Http) {}
+	_baseUrl: string;
+
+	constructor(private http: Http, location: Location) {
+		this._baseUrl = environment.SERVER_HOST + '/learningout/api';
+	}
 	
 	createPlace(json: Place) {
 		let place: Place = new Place();
@@ -22,17 +27,17 @@ export class PlaceService {
 	}
 
 	getPlaces(): Observable<Place[]> {
-		return this.http.get('http://localhost:8080/learningout/api/places.json')
+		return this.http.get(this._baseUrl + '/places.json')
 						.map((response: Response) => <Place[]> response.json());
 	}
 
 	search(term: string): Observable<Place[]> {
-		return this.http.get(`http://localhost:8080/learningout/api/places/search.json?term=${term}`)
+		return this.http.get(this._baseUrl + `/places/search.json?term=${term}`)
 					.map((response: Response) => <Place[]> response.json());
 	}
 
 	getPlace(id: number): Observable<Place> {
-		return this.http.get(`http://localhost:8080/learningout/api/places/${id}.json`)
+		return this.http.get(this._baseUrl + `/places/${id}.json`)
 					.map((response: Response) => <Place> response.json());
 	}
 
@@ -40,7 +45,7 @@ export class PlaceService {
 		const headers = new Headers();
     	headers.append('Content-Type', 'application/json');
     	headers.append('Accept', 'application/json');
-		return this.http.post(`http://localhost:8080/learningout/api/places/add/place.json`,JSON.stringify(place), {headers})
+		return this.http.post(this._baseUrl + `/places/add/place.json`,JSON.stringify(place), {headers})
 					.map((response: Response) => <Place> response.json())
     				.catch(this.handleError);
 	}
@@ -48,7 +53,7 @@ export class PlaceService {
 	deletePlace(id: String): Observable<number> {
 		const headers = new Headers({'Content-Type': ' application/json;charset=UTF-8'});
 		const options = new RequestOptions({headers: headers});
-		return this.http.delete(`http://localhost:8080/learningout/api/places/delete/${id}.json`, options)
+		return this.http.delete(this._baseUrl + `/places/delete/${id}.json`, options)
 			.map((response: Response) => response.status)
 			.catch(this.handleError);
 	}
@@ -57,7 +62,7 @@ export class PlaceService {
 		const body = JSON.stringify(place);
 		const headers = new Headers({'Content-Type': ' application/json;charset=UTF-8'});
 		const options = new RequestOptions({headers: headers});
-		return this.http.put(`http://localhost:8080/learningout/api/places/update/${place.idPlace}.json`, body, options)
+		return this.http.put(this._baseUrl + `/places/update/${place.idPlace}.json`, body, options)
 			.map((response: Response) => response)
 			.catch(this.handleError);
 	}

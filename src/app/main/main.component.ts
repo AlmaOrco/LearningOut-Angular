@@ -16,7 +16,7 @@ import { PlaceService } from '../services/place.service';
 export class MainComponent {
 
     private title = "Encuentra tu lugar";
-    private places: Observable<Place[]>;
+    places: Observable<Place[]>;
 
     constructor(placeService: PlaceService, private router: Router){
     	this.places = placeService.getPlaces();

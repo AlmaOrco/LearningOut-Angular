@@ -29,7 +29,8 @@ npm install -g @angular/cli@latest
 
 Clone this project:
 ```
-https://github.com/AlmaOrco/LearningOut-Angular.git
+git clone https://github.com/AlmaOrco/LearningOut-Angular.git
+cd LearningOut-Angular
 ```
 And install local project package:
 ```
@@ -39,7 +40,25 @@ npm install
 This will create the directory *node-modules* with all dependencies listed in *package.json*.
 
 ## Running server
-Use ```ng serve``` for a dev server, and you can find our app at ```http://localhost:4200/```
+Use ```ng serve``` or ```npm start``` for a dev server, and you can find our app at ```http://localhost:4200/```
+
+## Deployment
+To deploy the project in production mode, you follow this step.
+Clone this project:
+```
+git clone https://github.com/AlmaOrco/LearningOut-Angular.git
+cd LearningOut-Angular
+```
+You'll need to know the hostname (or **"host:port"**) of your api and set the **SERVER_HOST** constant, in */src/environments/environment.prod.ts*
+
+Compile the project with *ng build*. Add *--prod* flag to avoid dead code and get a lighter version of files.
+```
+ng build --prod
+```
+This creates all necesary files in the directory *dist*.
+Copy these files to your server and open your index.html code. Notice that routes are pointing to the root of your server. Remember to update the routes of src and href attributes if you put them in inner directory.
+
+Now, you can go to your browser and tip url of your app.
 
 ## Further help
 

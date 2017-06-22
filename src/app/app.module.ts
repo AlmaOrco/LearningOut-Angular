@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
+
 import { PlaceService } from './services/place.service';
 
 import { AppComponent } from './app.component';
