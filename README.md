@@ -34,7 +34,6 @@ cd LearningOut-Angular
 ```
 And install local project package:
 ```
-npm install --save-dev @angular/cli@latest
 npm install
 ```
 This will create the directory *node-modules* with all dependencies listed in *package.json*.
